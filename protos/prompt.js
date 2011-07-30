@@ -12,6 +12,10 @@ function get_prompt(prefix) {
 	    prefix = prefix || '> ',
 	    prompt = new EventEmitter();
 	
+	prompt.on('setPromptString', function(value) {
+		prefix = ""+value;
+	});
+	
 	prompt.on('draw', function() {
 		process.stdout.write('\r' + prefix + line );
 	});
