@@ -11,11 +11,14 @@ function simple_shell(context, prefix) {
 		
 		if(context[cmd] && (typeof context[cmd] === 'function')) {
 			context[cmd].apply(context, args);
+		} else {
+			prompt.emit('error', 'Unknown command: ' + cmd);
 		}
 		
 		// Let's draw the prompt again once we are finished using the terminal
 		prompt.emit('draw');
 	});
+	return prompt;
 }
 
 /* The Example */

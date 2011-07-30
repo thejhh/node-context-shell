@@ -21,6 +21,14 @@ var context = {
 	'quit': exit
 };
 
-shell.start(context);
+var prompt = shell.start(context);
+
+prompt.on('error', function(msg) {
+	console.error(msg);
+});
+
+prompt.on('debug', function(msg) {
+	process.stderr.write(msg + "\n");
+});
 
 /* EOF */

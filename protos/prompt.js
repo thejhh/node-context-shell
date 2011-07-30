@@ -57,11 +57,11 @@ function get_prompt(prefix) {
 		}
 		
 		prompt.emit('undraw');
-		process.stderr.write('Unknown key pressed:\n' );
-		process.stderr.write(' - line: "' + line + '"\n' );
-		process.stderr.write(' - code: ' + sys.inspect(code) + "\n" );
-		process.stderr.write(' - char: ' + sys.inspect(char) + "\n" );
-		process.stderr.write(' - key: ' + sys.inspect(key) + "\n" );
+		prompt.emit('debug', 'Unknown key pressed:\n'+
+			' - line: "' + line + '"\n'+
+			' - code: ' + sys.inspect(code) + "\n"+
+			' - char: ' + sys.inspect(char) + "\n"+
+			' - key: ' + sys.inspect(key) );
 		prompt.emit('draw');
 		
 	});
