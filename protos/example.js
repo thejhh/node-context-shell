@@ -1,9 +1,7 @@
 
 /* The Library */
 
-var shell = require('./simple-shell.js'),
-    foreach = require('snippets').foreach,
-    sys = require('sys');
+var shell = require('./simple-shell.js');
 
 /* The Example */
 

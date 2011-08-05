@@ -1,9 +1,10 @@
 /* Simple context aware prompt */
 
-var trim = require('snippets').trim;
+var foreach = require('snippets').foreach,
+    sys = require('sys'),
+    trim = require('snippets').trim;
 
 function command_exit() {
-	console.log('Bye!');
 	process.exit();
 }
 
